@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './core/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { FormComponent } from './core/form/form.component';
+import { AgGridModule } from '@ag-grid-community/angular';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { FormComponent } from './core/form/form.component';
   imports: [
     SharedModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgGridModule.withComponents([]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
