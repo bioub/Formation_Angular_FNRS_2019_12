@@ -1,0 +1,27 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+.selected {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.items {
+  cursor: pointer;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border: 1px solid black;
+  .item {
+    padding: 5px;
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+}
+
+

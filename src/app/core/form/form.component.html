@@ -1,0 +1,24 @@
+<form #form="ngForm" (submit)="form.valid && onSubmit()">
+  <div class="form-group">
+    <label>Email address</label>
+    <!-- <input type="email" class="form-control" name="email"  [ngModel]="user.email" (ngModelChange)="user.email = $event"> -->
+    <input type="email" class="form-control" [class.is-invalid]="(form.submitted || email.touched) && email.invalid" #email="ngModel" name="email" [(ngModel)]="user.email" required email>
+    <!-- [()] Banana in a box -->
+    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <div class="invalid-feedback" *ngIf="(form.submitted || email.touched) && email.invalid && email.errors.required">
+      L'email est obligatoire
+    </div>
+    <div class="invalid-feedback" *ngIf="(form.submitted || email.touched) && email.invalid && email.errors.email">
+      L'email n'a pas le bon format
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" [(ngModel)]="user.password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="rememberMe" [(ngModel)]="user.rememberMe">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>

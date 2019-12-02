@@ -1,0 +1,6 @@
+<div class="selected" (click)="opened = true">
+  {{selected}}
+</div>
+<div class="items" *ngIf="opened">
+  <div class="item" *ngFor="let item of items" (click)="onSelect(item)">{{item}}</div>
+</div>

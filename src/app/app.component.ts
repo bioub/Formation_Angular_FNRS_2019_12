@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FormationAngularFNRS201912';
+
+  delayMs = 2000;
+
+  couleurs = ['Rouge', 'Vert', 'Bleu']
+  couleurSelected = 'Bleu';
 }
